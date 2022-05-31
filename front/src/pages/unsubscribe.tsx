@@ -5,6 +5,7 @@ import Popup from "../components/popup";
 import { FormEvent, useState } from "react";
 import { IMessage } from "../components/popup";
 import { useSearchParams } from "react-router-dom";
+import getApiUrl from "../utils/getApiUrl";
 
 const Unsubscribe = () => {
   const [searchParams] = useSearchParams();
@@ -13,7 +14,7 @@ const Unsubscribe = () => {
   const onSubmit = (event: FormEvent) => {
     event.preventDefault();
     const id = searchParams.get("id");
-    fetch(`http://localhost:3001/subscription/${id}`, { method: "DELETE" })
+    fetch(getApiUrl(`/subscription/${id}`), { method: "DELETE" })
       .then((res) => res.json())
       .then((json) => {
         if (json.error) {

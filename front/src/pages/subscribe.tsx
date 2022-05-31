@@ -4,6 +4,7 @@ import Input from "../components/input";
 import Popup, { IMessage } from "../components/popup";
 import Title from "../components/title";
 import Form from "../components/form";
+import getApiUrl from "../utils/getApiUrl";
 
 const Subscribe = () => {
   const [email, setEmail] = useState("");
@@ -11,7 +12,7 @@ const Subscribe = () => {
 
   const onSubmit = (event: FormEvent) => {
     event.preventDefault();
-    fetch("http://localhost:3001/subscription", {
+    fetch(getApiUrl("/subscription"), {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
