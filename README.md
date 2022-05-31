@@ -24,3 +24,16 @@ Przejść do folderu /frontend i wykonać komendy:
 
     npm i
     npm run dev
+
+## Migracja bazy danych
+Generowanie migracji na podstawie zaktualizowanego modelu:
+
+    npm run generate
+
+Wykonywanie migracji na bazie danych:
+
+    npm run migrate
+
+Cofanie wykonanych migracji:
+
+    npm run revert
