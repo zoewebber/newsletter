@@ -4,12 +4,10 @@ import Unsubscribe from "./pages/unsubscribe";
 
 function App() {
   return (
-    <div className="flex justify-center align-middle h-screen bg-emerald-50">
-      <Routes>
-        <Route path="/" element={<Subscribe />} />
-        <Route path="unsubscribe" element={<Unsubscribe />} />
-      </Routes>
-    </div>
+    <Routes>
+      <Route path="/" element={<Subscribe />} />
+      <Route path="unsubscribe" element={<Unsubscribe />} />
+    </Routes>
   );
 }
 

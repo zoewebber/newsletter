@@ -5,6 +5,7 @@ import Popup, { IMessage } from "../components/popup";
 import Title from "../components/title";
 import Form from "../components/form";
 import getApiUrl from "../utils/getApiUrl";
+import Page from "../components/page";
 
 const Subscribe = () => {
   const [email, setEmail] = useState("");
@@ -39,14 +40,14 @@ const Subscribe = () => {
   };
 
   return (
-    <>
+    <Page>
       <Form onSubmit={onSubmit}>
         <Title>Newsletter</Title>
         <Input label="Email" value={email} onChange={setEmail} />
-        <Button className="mb-10 mx-auto mt-5">Join</Button>
+        <Button className="mb-10 mx-auto mt-5">Subscribe</Button>
       </Form>
       <Popup message={message} />
-    </>
+    </Page>
   );
 };
 

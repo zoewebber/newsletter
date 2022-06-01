@@ -6,6 +6,7 @@ import { FormEvent, useState } from "react";
 import { IMessage } from "../components/popup";
 import { useSearchParams } from "react-router-dom";
 import getApiUrl from "../utils/getApiUrl";
+import Page from "../components/page";
 
 const Unsubscribe = () => {
   const [searchParams] = useSearchParams();
@@ -34,13 +35,13 @@ const Unsubscribe = () => {
   };
 
   return (
-    <>
+    <Page>
       <Form onSubmit={onSubmit}>
         <Title>Unsubscribe</Title>
         <Button className="my-5 mx-auto">Confirm</Button>
       </Form>
       <Popup message={message} />
-    </>
+    </Page>
   );
 };
 
