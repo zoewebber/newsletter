@@ -1,10 +1,12 @@
 FROM node:16 as builder
 
+ARG VITE_BACKEND_URL
+
 WORKDIR /app
 
 COPY . /app/
 RUN npm ci
-RUN npm run build
+RUN VITE_BACKEND_URL=$VITE_BACKEND_URL npm run build
 
 FROM nginx
 
