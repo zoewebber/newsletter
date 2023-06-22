@@ -21,4 +21,4 @@ jobs:
       - uses: depot/build-push-action@v1
         with:
           project: ctrhtdw76r
-          context: /front/
+          context: front/
