@@ -10,4 +10,4 @@ RUN VITE_BACKEND_URL=$VITE_BACKEND_URL npm run build
 
 FROM nginx as mystage2
 
-COPY --from=builder /app/dist /usr/share/nginx/html
+COPY --from=mystage1 /app/dist /usr/share/nginx/html
