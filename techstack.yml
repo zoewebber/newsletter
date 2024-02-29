@@ -2,7 +2,7 @@ repo_name: terasa/newsletter
 report_id: d1ff3f685264ea71ed84c031c2c5b456
 version: 0.1
 repo_type: Public
-timestamp: '2024-01-05T09:25:03+00:00'
+timestamp: '2024-02-29T18:04:04+00:00'
 requested_by: web-flow
 provider: github
 branch: main
@@ -243,7 +243,7 @@ tools:
   last_updated_by: gazeta.pl
   last_updated_on: 2023-06-22 07:36:08.000000000 Z
 - name: Prettier
-  description: 'Prettier is an opinionated code formatter. '
+  description: Prettier is an opinionated code formatter.
   website_url: https://prettier.io/
   version: 2.6.2
   license: MIT
@@ -566,6 +566,13 @@ tools:
   last_updated_by: bartoszwrobel
   last_updated_on: 2022-06-01 12:17:29.000000000 Z
   vulnerabilities:
+  - name: Vite dev server option `server.fs.deny` can be bypassed when hosted on case-insensitive
+      filesystem
+    cve_id: CVE-2024-23331
+    cve_url: https://github.com/advisories/GHSA-c24v-8rfc-w8vw
+    detected_date: Jan 20
+    severity: high
+    first_patched: 2.9.17
   - name: Vite Server Options (server.fs.deny) can be bypassed using double forward-slash
       (//)
     cve_id: CVE-2023-34092
