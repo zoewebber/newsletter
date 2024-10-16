@@ -13,7 +13,7 @@
   "dependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-router-dom": "^6.3.0"
+    "react-router-dom": "^6.26.2"
   },
   "devDependencies": {
     "@testing-library/react": "^13.3.0",
