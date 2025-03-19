@@ -20,5 +20,6 @@ jobs:
       - uses: depot/setup-action@v1
       - uses: depot/build-push-action@v1
         with:
+          save: true
           project: ctrhtdw76r
           context: front/
