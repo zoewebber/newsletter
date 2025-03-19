@@ -20,6 +20,7 @@ jobs:
       - uses: depot/setup-action@v1
       - uses: depot/build-push-action@v1
         with:
+          token: ${{ secrets.DEPOT_TOKEN }}
           save: true
           project: ctrhtdw76r
           context: front/
