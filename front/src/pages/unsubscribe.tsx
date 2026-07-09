@@ -15,7 +15,22 @@ const Unsubscribe = () => {
   const onSubmit = (event: FormEvent) => {
     event.preventDefault();
     const id = searchParams.get("id");
-    fetch(getApiUrl(`/subscription/${id}`), { method: "DELETE" })
+    const token = searchParams.get("token");
+
+    if (!id || !token) {
+      setMessage({
+        type: "ERROR",
+        text: "Invalid unsubscribe link",
+      });
+      return;
+    }
+
+    fetch(
+      getApiUrl(
+        `/subscription/${id}?token=${encodeURIComponent(token)}`
+      ),
+      { method: "DELETE" }
+    )
       .then((res) => res.json())
       .then((json) => {
         if (json.error) {
