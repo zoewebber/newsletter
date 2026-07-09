@@ -5,6 +5,7 @@ export interface IMessage {
   text: string;
   id?: number;
   email?: string;
+  unsubscribeToken?: string;
 }
 
 interface IPopupProps {
@@ -25,8 +26,13 @@ const Popup = ({ message }: IPopupProps) => {
       <span>
         {message.text} {message.email}{" "}
       </span>
-      {message.id && (
-        <Link to={`/unsubscribe?id=${message.id}`} className="text-red-500">
+      {message.id !== undefined && message.unsubscribeToken && (
+        <Link
+          to={`/unsubscribe?id=${message.id}&token=${encodeURIComponent(
+            message.unsubscribeToken
+          )}`}
+          className="text-red-500"
+        >
           Unsubscribe
         </Link>
       )}

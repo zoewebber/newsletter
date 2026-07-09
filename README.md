@@ -9,7 +9,12 @@
 ## Przed uruchomieniem projektu
 
 - Stworzyć pustą bazę danych
-- Zaktualizować konfiguracje w /backend/src/data-source.ts
+- Skopiować pliki konfiguracyjne i ustawić lokalne wartości:
+
+      cp backend/.env.example backend/.env
+      cp front/.env.example front/.env
+
+- W srodowisku produkcyjnym ustawic `TYPEORM_SYNCHRONIZE=false` i uruchamiac migracje bazy danych zamiast automatycznej synchronizacji schematu.
 
 ## Uruchomienie projektu
 

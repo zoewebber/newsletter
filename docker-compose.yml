@@ -1,12 +1,10 @@
 services:
   db:
-    image: postgres
-    ports:
-      - "5432:5432"
+    image: postgres:14
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: newsletter
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: ${POSTGRES_DB:-newsletter}
 
   backend:
     image: ${BACKEND_IMAGE}:${BACKEND_IMAGE_VERSION}
@@ -17,6 +15,11 @@ services:
     command: ["./wait-for-it.sh", "db:5432", "--", "npm", "run", "start"]
     environment:
       DB_HOST: db
+      DB_PORT: 5432
+      DB_USERNAME: ${POSTGRES_USER:-postgres}
+      DB_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      DB_DATABASE: ${POSTGRES_DB:-newsletter}
+      CORS_ORIGIN: ${CORS_ORIGIN:-http://localhost,http://localhost:3000}
 
   frontend:
     image: ${FRONTEND_IMAGE}:${FRONTEND_IMAGE_VERSION}
