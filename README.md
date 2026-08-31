@@ -1,4 +1,4 @@
-# Newsletter123
+# Newsletter1234
 
 <p align="center">
   <strong>Aplikacja newsletterowa z frontem w React i backendem w Express.</strong>
